@@ -18,7 +18,7 @@ public class Q10 {
 // }
 
 
-
+    //10
 	public static void main(String[] args) {
 	
 		/*
