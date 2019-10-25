@@ -1,7 +1,7 @@
 package edu.citytech.cst.model;
 
 public class Employee {
-	private String empid;
+	 String empid;
 	public Day  days;
 	public float hourlywage;
 	

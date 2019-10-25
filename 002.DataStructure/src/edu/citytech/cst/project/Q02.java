@@ -8,6 +8,8 @@ import edu.citytech.cst.model.Employee;
 public class Q02 {
 	
 	public static boolean isHoursGT5(Employee emp) {		
+		
+		
 		return emp.days.monday > 5;
 	}
 

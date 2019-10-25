@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.model.Employee;
+import edu.citytech.cst.model.WeeklySalary;
 
 public class Q18 {
 
@@ -26,56 +27,20 @@ public class Q18 {
 
 		 * 
 		 */
-		List<Employee> list = new EmployeeDAO().findAll();
-
-		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
-
-// isHoursGt40 = e -> e.
-// IntStream.of(a).sum()
-
-//for (int i = 0; i < list.size(); i++) {
-//				List<Employee> list2 = list.stream().filter(isHoursGt40); 	
-
-				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-						+ e.days.friday + e.days.saturday + e.days.sunday)
-//				 .reduce(0,
-//					        (sum, e) -> {
-//					            System.out.format("accumulator: sum=%s; person=%s\n", sum, e);
-//					            return sum += e.;
-//					        },
-//					        (sum1, sum2) -> {
-//					            System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-//					            return sum1 + sum2;
-//					        })
-//				.collect(Collectors.reducing())
 		
-				.forEach(System.out::println);
-
-				
-				
-//list.stream().filter(isHoursGt40).max(e -> {
-//			
-//		})
-//// .equals(String sum += list[i] )
-//				list.parallelStream().filter(isHoursGt40)
-//				.map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-//						+ e.days.friday + e.days.saturday + e.days.sunday) 
-//				.reduce(0,
-//						        (sum, e) -> {
-//						            System.out.format("accumulator: sum=%s; person=%s\n", sum, e);
-//						            return sum += e.;
-//						        },
-//						        (sum1, sum2) -> {
-//						            System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-//						            return sum1 + sum2;
-//						        })
-//				.forEach(System.out::println);
-//}
-
-		long size = list.stream().filter(isHoursGt40).toArray().length;
+		List<Employee> list = new EmployeeDAO().findAll();		
+		List<WeeklySalary> wlist = list.stream().map(WeeklySalary::new).collect(Collectors.toList());
+		
+		float total = 0, avg = 0;
+		for (WeeklySalary weeklySalary: wlist) {
+			total = total + weeklySalary.weeklySalary;
+			
+		}
+		avg = total / wlist.size();
+		System.out.println("avg:" + avg + " total:" + total );
+//		
+		long size = list.size();
 		System.out.println("Number of Employees: " + size);
-
 	}
 
 }
