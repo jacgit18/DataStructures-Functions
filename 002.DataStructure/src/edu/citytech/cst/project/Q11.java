@@ -10,12 +10,10 @@ import edu.citytech.cst.model.Employee;
 public class Q11 {
 
 // try using both functional and using a method
-// public static boolean isOverTime(Employee e) {
-//
-//// e.days.monday + e.days.tuesday + e.days.wendesday + + e.days.thursday + e.days.friday + e.days.saturday + e.days.sunday > 40
-//
-// return status;
-// }
+ public static boolean isWages9(Employee employee) {
+	boolean status = employee.days.monday + employee.hourlywage == 9;
+	return status;
+		}
 
 
 
@@ -23,59 +21,31 @@ public class Q11 {
 	
 		/*
 		     11. Find the number of employees that make $9 an hour (class: Q11).
-
-		 * 
 		 */
 		List<Employee> list = new EmployeeDAO().findAll();
 
-		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
+		Predicate<Employee> isWages9 = e -> e.hourlywage == 9 ;
+				
+		list.stream().filter(isWages9).forEach(System.out::println);
 
-// isHoursGt40 = e -> e.
-// IntStream.of(a).sum()
+				
+				
+//		list.stream().filter(Q11::isWages9).forEach(System.out::println);
 
-//for (int i = 0; i < list.size(); i++) {
-//				List<Employee> list2 = list.stream().filter(isHoursGt40); 	
-
-				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-						+ e.days.friday + e.days.saturday + e.days.sunday)
-//				 .reduce(0,
-//					        (sum, e) -> {
-//					            System.out.format("accumulator: sum=%s; person=%s\n", sum, e);
-//					            return sum += e.;
-//					        },
-//					        (sum1, sum2) -> {
-//					            System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-//					            return sum1 + sum2;
-//					        })
-//				.collect(Collectors.reducing())
 		
-				.forEach(System.out::println);
+//		long size = list.stream().filter(Q11::isWages9).toArray().length;
+//		System.out.println("Number of Employees: " + size);
 
-				
-				
-//list.stream().filter(isHoursGt40).max(e -> {
-//			
-//		})
-//// .equals(String sum += list[i] )
-//				list.parallelStream().filter(isHoursGt40)
-//				.map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-//						+ e.days.friday + e.days.saturday + e.days.sunday) 
-//				.reduce(0,
-//						        (sum, e) -> {
-//						            System.out.format("accumulator: sum=%s; person=%s\n", sum, e);
-//						            return sum += e.;
-//						        },
-//						        (sum1, sum2) -> {
-//						            System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
-//						            return sum1 + sum2;
-//						        })
-//				.forEach(System.out::println);
-//}
 
-		long size = list.stream().filter(isHoursGt40).toArray().length;
+		long size = list.stream().filter(isWages9).toArray().length;
 		System.out.println("Number of Employees: " + size);
-
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

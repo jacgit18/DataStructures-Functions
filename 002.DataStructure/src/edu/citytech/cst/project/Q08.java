@@ -11,13 +11,9 @@ public class Q08 {
 
 	// try using both functional and using a method
 		public static boolean isEmployeeGts40SumTotal(Employee employee) {
-			return employee.hourlywage *
-					employee.days.monday + employee.days.tuesday + 
-					employee.days.wendesday + 
-					employee.days.thursday + 
-					employee.days.friday +
-					employee.days.saturday + 
-					employee.days.sunday > 40 ;	
+			boolean status = employee.days.monday + employee.days.tuesday + employee.days.wendesday + employee.days.thursday
+					+ employee.days.friday + employee.days.saturday + employee.days.sunday > 40;
+			return status;
 				}
 
 
@@ -77,9 +73,16 @@ public class Q08 {
 //						        })
 //				.forEach(System.out::println);
 //}
+				
+//		list.stream().filter(Q08::isEmployeeGts40SumTotal).forEach(System.out::println);
+//		
+//		int size = list.stream().filter(Q08::isEmployeeGts40SumTotal).toArray().length;
+//		System.out.println("Total Overtime Hours: " + size);
 
 		long size = list.stream().filter(isHoursGt40).toArray().length;
 		System.out.println("Number of Employees: " + size);
+		
+		
 
 	}
 

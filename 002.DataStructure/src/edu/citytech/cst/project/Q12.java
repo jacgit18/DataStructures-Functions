@@ -1,23 +1,20 @@
 package edu.citytech.cst.project;
 
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
+
 
 import edu.citytech.cst.dao.EmployeeDAO;
-import edu.citytech.cst.function.EmployeeFunction;
 import edu.citytech.cst.model.Employee;
 import edu.citytech.cst.model.WeeklySalary;
 
 public class Q12 {
 
-// try using both functional and using a method
-// public static boolean isOverTime(Employee e) {
-//
-//// e.days.monday + e.days.tuesday + e.days.wendesday + + e.days.thursday + e.days.friday + e.days.saturday + e.days.sunday > 40
-//
-// return status;
-// }
+	// try using both functional and using a method
+			public static boolean isEmployeeGts40SumTotal(Employee employee) {
+				boolean status = employee.days.monday + employee.days.tuesday + employee.days.wendesday + employee.days.thursday
+						+ employee.days.friday + employee.days.saturday + employee.days.sunday > 40;
+				return status;
+					}
 
 
 	/*

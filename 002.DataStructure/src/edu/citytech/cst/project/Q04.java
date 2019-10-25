@@ -17,7 +17,9 @@ public class Q04 {
 	 * @return
 	 */
 	public static boolean isSundayGT5(Employee employee) {
-		return employee.days.sunday > 5 ;	
+		
+		boolean status = employee.days.sunday > 5 ;
+		return status ;	
 			}
 
 	public static void main(String[] args) {
@@ -29,19 +31,22 @@ public class Q04 {
 		List<Employee> list = new EmployeeDAO().findAll();
 
 		Predicate<Employee> isSundayGT5 = emp -> emp.days.sunday > 5;
-
+//
 		list.stream().filter(isSundayGT5).forEach(System.out::println);
+		
+		// alternative way to above code but requires making a method
 
+//		 list.stream().filter(Q04::isSundayGT5).forEach(System.out::println);
+		
+//		 long size = list.stream().filter(Q04::isSundayGT5).toArray().length;
+//		 System.out.println("Number of Employees: " + size);
+		 
 		long size = list.stream().filter(isSundayGT5).toArray().length;
 		System.out.println("Number of Employees: " + size);
 
-// alternative way to above code but requires making a method
 
-// list.stream().filter(Q04::isSundayGT5).forEach(Q04::isSundayGT5);
-//
-//
-// long size = list.stream().filter(Q04::isSundayGT5).toArray().length;
-// System.out.println("Number of Employees: " + size);
+
+
 
 	}
 

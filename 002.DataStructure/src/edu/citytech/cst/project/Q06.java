@@ -9,13 +9,11 @@ import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.model.Employee;
 
 public class Q06 {
-
-	   
-	// try using functional than method approach
-
-
-	
-	
+	/*
+	 6. What is the total amount of money paid out on a Monday?  
+		 Note this is done by calculating hours worked on a Monday 
+		 multiplied with their hourly wage.
+	 */
 	public static void main(String[] args) {
 		ex1();
 		ex2();
@@ -23,11 +21,7 @@ public class Q06 {
 	
 	public static void ex1() {
 
-/*
- 6. What is the total amount of money paid out on a Monday?  
-	 Note this is done by calculating hours worked on a Monday 
-	 multiplied with their hourly wage.
- */
+
 	List<Employee> list = new EmployeeDAO().findAll();
 	float total = 0;
 
@@ -43,10 +37,10 @@ public class Q06 {
 		System.out.println("the total is " + total);
 		
 	}
-	// what is a, c and x 
+	
+	// Functional way
 	public static void ex2() {
 
-		// functional way
 			List<Employee> list = new EmployeeDAO().findAll();
 			
 			ToDoubleFunction<Employee> x = e -> e.days.monday * e.hourlywage;
@@ -55,13 +49,15 @@ public class Q06 {
 					.filter(e -> e.hourlywage >= 15_000)
 //					list.stream().mapToDouble(x)
 			    .mapToDouble(x)
+			 // what is a, c and x 
 				.reduce((a,c) -> a + c);
 //			list.stream().mapToDouble(x)
 			
 //			.forEach(System.out::println);;
 			
 			System.out.println(total.isEmpty());
-		
+			System.out.println(total);
+
 				
 				
 			}

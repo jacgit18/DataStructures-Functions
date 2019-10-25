@@ -9,13 +9,11 @@ import edu.citytech.cst.model.Employee;
 
 public class Q09 {
 
-// try using both functional and using a method
-// public static boolean isOverTime(Employee e) {
-//
-//// e.days.monday + e.days.tuesday + e.days.wendesday + + e.days.thursday + e.days.friday + e.days.saturday + e.days.sunday > 40
-//
-// return status;
-// }
+ public static boolean isOverTime(Employee employee) {
+	boolean status = employee.days.monday + employee.days.tuesday + employee.days.wendesday + employee.days.thursday
+			+ employee.days.friday + employee.days.saturday + employee.days.sunday > 40;
+	return status;
+		}
 
 	public static void main(String[] args) {
 

@@ -10,13 +10,12 @@ import edu.citytech.cst.model.WeeklySalary;
 
 public class Q18 {
 
-// try using both functional and using a method
-// public static boolean isOverTime(Employee e) {
-//
-//// e.days.monday + e.days.tuesday + e.days.wendesday + + e.days.thursday + e.days.friday + e.days.saturday + e.days.sunday > 40
-//
-// return status;
-// }
+	// try using both functional and using a method
+			public static boolean isEmployeeGts40SumTotal(Employee employee) {
+				boolean status = employee.days.monday + employee.days.tuesday + employee.days.wendesday + employee.days.thursday
+						+ employee.days.friday + employee.days.saturday + employee.days.sunday > 40;
+				return status;
+					}
 
 
 
