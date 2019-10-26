@@ -34,7 +34,7 @@ public class Q05 {
 		 * 
 		 * this List<Integer> list = new List<Integer>(); is better to do because you
 		 * can make any type of list instead just using a concrete class list where your
-		 * limited
+		 * limited 
 		 * 
 		 * 
 		 * List is an interface or Blueprint for implementors like ArrayList or

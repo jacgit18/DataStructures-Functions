@@ -6,11 +6,12 @@ import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.model.Employee;
+import edu.citytech.cst.model.WeeklySalary;
 
 public class Q13 {
 
 	// try using both functional and using a method
-	 public static boolean isWages9(Employee employee) {
+	 public static boolean isHoursGt40(Employee employee) {
 		boolean status = employee.days.monday + employee.hourlywage == 9;
 		return status;
 			}
@@ -26,20 +27,16 @@ public class Q13 {
 		 */
 		List<Employee> list = new EmployeeDAO().findAll();
 
-		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
+//		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
+//				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
 
-
-
-				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-						+ e.days.friday + e.days.saturday + e.days.sunday)
 
 		
-				.forEach(System.out::println);
+
+				list.stream().map(WeeklySalary::new).sorted().limit(1).forEach(System.out::println);
 
 				
-				
-		long size = list.stream().filter(isHoursGt40).toArray().length;
+		long size = list.stream().toArray().length;
 		System.out.println("Number of Employees: " + size);
 
 	}
