@@ -7,7 +7,7 @@ import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.model.Employee;
 
 public class Q05 {
-
+//fix
 	public static boolean isGts40(Employee employee) {
 
 		boolean status = employee.days.monday + employee.days.tuesday + employee.days.wendesday
