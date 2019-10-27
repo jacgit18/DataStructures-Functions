@@ -1,6 +1,7 @@
 package edu.citytech.cst.project;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.function.EmployeeFunction;
@@ -89,9 +90,8 @@ public class Q05 {
 //		Predicate<Employee> isEmpHoursGt40 = e -> e.days.monday
 //		+ e.days.tuesday + e.days.wendesday + e.days.thursday + e.days.friday
 //		+ e.days.saturday + e.days.sunday > 40;
-		list.stream().map(WeeklySalary::new)
-		.filter(EmployeeFunction.isovertime).sorted()
-				.forEach(System.out::println);
+		list.stream().map(WeeklySalary::new).filter(EmployeeFunction.isovertime).sorted().forEach(System.out::println);
+//		list.stream().filter(isEmpGts40).forEach(System.out::println);
 
 		// Alternative way to above code but requires make a method
 
@@ -101,9 +101,19 @@ public class Q05 {
 //		System.out.println("Number of Employees: " + size);
 		
 		
-//		long size = list.stream().filter().toArray().length;
-		long size = list.size();
+		long size = list.stream().filter(Q05::isEmpGts40).toArray().length;
+//		long size = list.size();
 		System.out.println("Number of Employees: " + size);
+		
+//List<WeeklySalary> wlist = list.stream().map(WeeklySalary::new).collect(Collectors.toList());
+//		
+//		float total = 0, avg = 0;
+//		for (WeeklySalary weeklySalary: wlist) {
+//			total = total + weeklySalary.weeklySalary;
+//			
+//		}
+//		avg = total / wlist.size();
+//		System.out.println("avg:" + avg + " total:" + total );
 
 	}
 
