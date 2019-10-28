@@ -19,7 +19,10 @@ public class Q07 {
 
 	public static void main(String[] args) {
 
-		/*
+		/*might have done both questions in class Q05
+		 *  * 5. Find the number of employees that worked more than a total of 40 hours for
+	 *          the entire week (class: Q05).
+		 * 
 		 * 7. This question is regarding overt time hours. Over time hours are hours
 		 * greater than 40 hours. How many employees are entitled to over time?
 		 * 

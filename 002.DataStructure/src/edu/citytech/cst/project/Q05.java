@@ -1,7 +1,6 @@
 package edu.citytech.cst.project;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
 import edu.citytech.cst.function.EmployeeFunction;
@@ -17,10 +16,7 @@ public class Q05 {
 	}
 	
 	
-	/*************************************************************************************
-	 * 5. Find the number of employees that worked more than a total of 40 hours for
-	 * the entire week (class: Q05).
-	 * 
+	/************************************************************************************* 
 	 * brackets < > declares type in this case Employee class List<Employee> list =
 	 * new EmployeeDAO().findAll();
 	 * 

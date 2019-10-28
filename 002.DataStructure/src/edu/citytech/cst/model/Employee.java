@@ -1,7 +1,7 @@
 package edu.citytech.cst.model;
 
 public class Employee {
-	 String empid;
+    String empid;
 	public Day  days;
 	public float hourlywage;
 	
@@ -14,6 +14,16 @@ public class Employee {
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+
+	public String getEmpid() {
+		return empid;
+	}
+
+
+	public void setEmpid(String empid) {
+		this.empid = empid;
 	}
 
 

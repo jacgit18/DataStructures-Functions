@@ -47,5 +47,14 @@ public class EmployeeFunction {
 	
 	public static Predicate<WeeklySalary> isovertime = e -> e.weeklyHours > 40;
 	
+	public static boolean BegwithId(Employee sp) {
+
+		String name = sp.getEmpid();
+
+		if (name.startsWith("G"))
+			return true;
+		return false;
+	}
+	
 	
 }
