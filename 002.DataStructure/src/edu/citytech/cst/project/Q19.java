@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
+import edu.citytech.cst.function.EmployeeFunction;
 import edu.citytech.cst.model.Employee;
 
 public class Q19 {
@@ -25,24 +26,12 @@ public class Q19 {
 		 */
 		List<Employee> list = new EmployeeDAO().findAll();
 
-		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
-
-
-				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-						+ e.days.friday + e.days.saturday + e.days.sunday)
-
+		list.stream().filter(EmployeeFunction::BegwithId).forEach(System.out::println);
 		
-				.forEach(System.out::println);
+		
 
-				
-				
-
-
-
-		long size = list.stream().filter(isHoursGt40).toArray().length;
+		long size = list.stream().filter(EmployeeFunction::BegwithId).toArray().length;
 		System.out.println("Number of Employees: " + size);
-
 	}
 
 }
