@@ -7,6 +7,7 @@ import edu.citytech.cst.function.EmployeeFunction;
 public class WeeklySalary implements Comparable<WeeklySalary> {
 	public String id;
 	public float hourlyWage;
+
 	public float weeklyHours; 
 	public float weeklySalary;
 	
@@ -24,6 +25,8 @@ public class WeeklySalary implements Comparable<WeeklySalary> {
 				+ ", weeklySalay=" + weeklySalary + "]";
 	}
 
+	
+	
 	@Override
 
 	/*1 gt

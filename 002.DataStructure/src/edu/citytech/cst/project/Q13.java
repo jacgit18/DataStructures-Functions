@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import edu.citytech.cst.dao.EmployeeDAO;
+import edu.citytech.cst.function.EmployeeFunction;
 import edu.citytech.cst.model.Employee;
 import edu.citytech.cst.model.WeeklySalary;
 
@@ -27,17 +28,13 @@ public class Q13 {
 		 */
 		List<Employee> list = new EmployeeDAO().findAll();
 
-//		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
-//				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
-
-
-		
-
-				list.stream().map(WeeklySalary::new).sorted().limit(1).forEach(System.out::println);
-
-				
-		long size = list.stream().toArray().length;
-		System.out.println("Number of Employees: " + size);
+//		list.stream().filter(EmployeeFunction::getweeklySalary).forEach(System.out::println);
+//		
+//		
+//
+//		long size = list.stream().filter(EmployeeFunction::getweeklySalary).toArray().length;
+//		System.out.println("Number of Employees: " + size);
+//		
 
 	}
 

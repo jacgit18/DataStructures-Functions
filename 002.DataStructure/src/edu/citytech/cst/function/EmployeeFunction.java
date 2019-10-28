@@ -23,6 +23,7 @@ public class EmployeeFunction {
 	
 	public static float getweeklySalary(WeeklySalary w) {
 		
+		
 		float weeklySalary = 0f;
 		float overtimePay = 0f;
 		float regularPay = 0f;
@@ -56,5 +57,6 @@ public class EmployeeFunction {
 		return false;
 	}
 	
+
 	
 }

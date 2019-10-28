@@ -1,7 +1,10 @@
 package edu.citytech.cst.model;
 
 public class Employee {
-    String empid;
+
+
+
+	String empid;
 	public Day  days;
 	public float hourlywage;
 	
@@ -24,6 +27,25 @@ public class Employee {
 
 	public void setEmpid(String empid) {
 		this.empid = empid;
+	}
+	
+    public float getHourlywage() {
+		return hourlywage;
+	}
+
+
+	public void setHourlywage(float hourlywage) {
+		this.hourlywage = hourlywage;
+	}
+
+
+	public Day getDays() {
+		return days;
+	}
+
+
+	public void setDays(Day days) {
+		this.days = days;
 	}
 
 
