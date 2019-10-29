@@ -29,10 +29,11 @@ public class Q20 {
 		//fuxed
 		List<Employee> list = new EmployeeDAO().findAll();
 
+		DoubleSummaryStatistics summary = (DoubleSummaryStatistics) list.stream();
+		
 		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
 				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
 
-//				DoubleSummaryStatistics summary = Arrays.stream(number).summaryStatistics();
 
 
 				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
