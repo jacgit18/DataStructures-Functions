@@ -1,5 +1,7 @@
 package edu.citytech.cst.project;
 
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -29,6 +31,8 @@ public class Q20 {
 		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
 				+ e.days.friday + e.days.saturday + e.days.sunday) > 40;
 
+//				DoubleSummaryStatistics summary = Arrays.stream(number).summaryStatistics();
+
 
 				list.stream().filter(isHoursGt40).map(e -> e.hourlywage * e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
 						+ e.days.friday + e.days.saturday + e.days.sunday)
@@ -43,7 +47,31 @@ public class Q20 {
 		long size = list.stream().filter(isHoursGt40).toArray().length;
 		System.out.println("Number of Employees: " + size);
 
+		
+		
+		
 	}
+	
+	public static void ex05(String[] args) {
+
+		// functional version
+
+		double number[] = { 1_000f, 90f, 90f, 90f, 45f};
+
+		DoubleSummaryStatistics summary = Arrays.stream(number).summaryStatistics();
+
+		// minus 1 is for lowest score
+		double avg = summary.getAverage();
+		double modifiedavg = (summary.getSum() - summary.getMin()) / (summary.getCount() - 1);
+		double olympicavg = (summary.getSum() - summary.getMax() - summary.getMin()) / (summary.getCount() - 1);
+
+		System.out.println(summary);
+		System.out.println(avg);
+		System.out.println(modifiedavg);
+		System.out.println(olympicavg);
+
+	}
+
 
 }
 

@@ -21,6 +21,19 @@ public class EmployeeFunction {
 		
 	}
 	
+	public static float getYearlySalary(Employee e) {
+		float totalyearlySalary =
+				e.days.monday + e.days.tuesday + 
+				e.days.wendesday + 
+				e.days.thursday + 
+				e.days.friday +
+				e.days.saturday + 
+				e.days.sunday * 52;	
+		
+		return totalyearlySalary;
+		
+	}
+	
 	public static float getweeklySalary(WeeklySalary w) {
 		
 		
