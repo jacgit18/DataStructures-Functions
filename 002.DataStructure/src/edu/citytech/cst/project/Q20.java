@@ -26,6 +26,7 @@ public class Q20 {
 
 		 * 
 		 */
+		//fuxed
 		List<Employee> list = new EmployeeDAO().findAll();
 
 		Predicate<Employee> isHoursGt40 = e -> (e.days.monday + e.days.tuesday + e.days.wendesday + e.days.thursday
