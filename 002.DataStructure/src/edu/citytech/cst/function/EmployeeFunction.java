@@ -70,6 +70,43 @@ public class EmployeeFunction {
 		return false;
 	}
 	
+	public static boolean Gender(Employee sp) {
 
+		String gender = sp.getGender();
+
+		if (gender.equals("male"))
+			return true;
+		return false;
+	}
+	
+	public static boolean Gender2(Employee sp) {
+
+		String gender = sp.getGender();
+
+		if (gender.startsWith("f"))
+			return true;
+		return false;
+	}
+
+
+	public static boolean RichestBourough(Employee sp) {
+
+		String bourough = sp.getRegion();
+		// use .equals for strings
+
+		if (bourough.startsWith("M"))
+			return true;
+		return false;
+	}
+	
+	public static boolean bxBourough(Employee sp) {
+
+		String bourough = sp.getRegion();
+		// use .equals for strings
+
+		if (bourough.equals("Bronx"))
+			return true;
+		return false;
+	}
 	
 }

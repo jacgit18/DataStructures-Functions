@@ -5,6 +5,8 @@ public class Employee {
 
 
 	String empid;
+	String gender;
+	String region;
 	public Day  days;
 	public float hourlywage;
 	
@@ -49,10 +51,33 @@ public class Employee {
 	}
 
 
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+	public String getRegion() {
+		return region;
+	}
+
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Employee [empid=" + empid + ", days=" + days + ", hourlyWage=" + hourlywage + "]";
+		return "Employee [empid=" + empid + ", gender=" + gender + ", region=" + region + ", days=" + days
+				+ ", hourlywage=" + hourlywage + "]";
 	}
+
+
 	
 }
 

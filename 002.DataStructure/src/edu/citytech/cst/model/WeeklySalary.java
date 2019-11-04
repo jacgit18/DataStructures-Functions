@@ -6,6 +6,9 @@ import edu.citytech.cst.function.EmployeeFunction;
 
 public class WeeklySalary implements Comparable<WeeklySalary> {
 	public String id;
+	public String gender;
+	public String region;
+
 	public float hourlyWage;
 
 	public float weeklyHours; 
@@ -13,16 +16,25 @@ public class WeeklySalary implements Comparable<WeeklySalary> {
 	
 	
 	public WeeklySalary(Employee e) {
+		
+
+		this.gender = e.gender.substring(0, 1).toUpperCase();
+		
 		this.id = e.empid;
+		this.region = e.region;
 		this.hourlyWage = e.hourlywage;
 		this.weeklyHours = EmployeeFunction.getWeeklyHours(e);
 		this.weeklySalary = getweeklySalary(this);
+		
 	}
 	
 	@Override
 	public String toString() {
-		return "WeeklySalary [id=" + id + ", hourlyWage=" + hourlyWage + ", weeklyHours=" + weeklyHours
-				+ ", weeklySalay=" + weeklySalary + "]";
+//		return "WeeklySalary [id=" + id + ", hourlyWage=" + hourlyWage + ", weeklyHours=" + weeklyHours
+//				+ ", weeklySalay=" + weeklySalary + "]";
+		
+		return "WeeklySalary [id=" + id +  ", weeklyHours=" + weeklyHours + ", region=" + region
+				+  ", gender=" + gender + "]";
 	}
 
 	
