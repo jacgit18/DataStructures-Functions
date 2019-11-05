@@ -18,7 +18,7 @@ public class EmployeeDAO {
 	
 	static {
 
-		String fileName = "/data/employee/employee-data.json";
+		String fileName = "/data/exam1/employee-data.json";
 		Gson gson = new Gson();
 
 		//read file into stream, try-with-resources
